@@ -260,8 +260,11 @@ CGFloat const kLARSAdContainerHeightPod = 50.0f;
             UIViewAutoresizingFlexibleTopMargin;
             break;
         case LARSAdControllerPinLocationTop:
-            self.containerView.autoresizingMask = UIViewAutoresizingFlexibleWidth |
-            UIViewAutoresizingFlexibleBottomMargin;
+            //reposition ads location so not cover navigational controller
+            //self.containerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
+            self.containerView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+            [self.containerView setFrame:CGRectMake(self.containerView.frame.origin.x, 70.f, 
+                self.containerView.frame.size.width, self.containerView.frame.size.height)];
             break;
     }
 }
@@ -488,7 +491,7 @@ case LARSAdControllerPresentationTypeTop:{
             break;
         case LARSAdControllerPinLocationTop:
             finalFrame.origin = CGPointMake((CGRectGetWidth(self.clippingContainer.frame) - bannerViewSize.width)/2,
-                                            80.f);
+                                            0.f);
             break;
     }
     
