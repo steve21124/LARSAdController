@@ -488,7 +488,7 @@ case LARSAdControllerPresentationTypeTop:{
             break;
         case LARSAdControllerPinLocationTop:
             finalFrame.origin = CGPointMake((CGRectGetWidth(self.clippingContainer.frame) - bannerViewSize.width)/2,
-                                            0.f);
+                                            80.f);
             break;
     }
     
